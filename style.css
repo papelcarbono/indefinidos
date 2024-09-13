@@ -281,6 +281,16 @@ nav {
     background-color: #ec2424;
 }
 
+.contato {
+    display: flex; /* Permite alinhamento lado a lado */
+    justify-content:center; /* Distribui o espaço entre os itens */
+    gap: 20px; /* Espaço entre o texto e o formulário */
+    padding: 30px;
+    box-sizing: border-box; 
+}
+
+
+
 .contato-container {
     background-color: #1d1622;
     padding: 30px;
@@ -288,7 +298,17 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 500px;
-    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.contato-texto {
+    flex: 1; /* Ocupa o espaço restante disponível */
+    max-width: 600px; /* Define uma largura máxima para o texto */
+    font-size: 40px;
+}
+
+.form-group {
+    margin-bottom: 15px;
 }
 
 h2 {
@@ -599,6 +619,20 @@ textarea {
     margin-top: 5px;
     height: 100px; /* Define uma altura fixa para a textarea */
 }
+.contato {
+    flex-direction: column; /* Alinha o texto e o formulário verticalmente */
+    gap: 10px; /* Reduz o espaço entre o texto e o formulário */
+}
+
+.contato-texto,
+.contato-container {
+    max-width: 100%; /* Garante que o conteúdo não ultrapasse a largura da tela */
+    font-size: 20px;
+
+
+
+
+}
 }
 
 @media (max-width: 600px) {
@@ -614,5 +648,18 @@ textarea {
     .modal-content {
         font-size: 14px; /* Ajusta o tamanho da fonte para melhor leitura em dispositivos menores */
     }
-}
 
+    .contato {
+        flex-direction: column; /* Alinha o texto e o formulário verticalmente */
+        gap: 10px; /* Reduz o espaço entre o texto e o formulário */
+    }
+    
+    .contato-texto,
+    .contato-container {
+        max-width: 100%; /* Garante que o conteúdo não ultrapasse a largura da tela */
+        font-size: 20px;
+    
+    
+    }
+
+}
