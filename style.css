@@ -353,7 +353,7 @@ button:hover {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     * {
         box-sizing: border-box;
       }
@@ -375,7 +375,7 @@ button:hover {
     video {
         width: 100%; /* Mantém a largura do vídeo */
         height: auto; /* Ajusta a altura automaticamente */
-        min-height: 37vh; /* Define a altura mínima para cobrir o conteúdo */
+        min-height: 42vh; /* Define a altura mínima para cobrir o conteúdo */
         object-fit: cover; /* Mantém o vídeo ajustado */
     }
     .container-titulo {
