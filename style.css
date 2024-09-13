@@ -444,5 +444,33 @@ button:hover {
         margin: 0;
         padding: 3px;
     }
+    .pular-texto {
+        position: absolute; /* Posiciona o botão de forma absoluta dentro do contêiner */
+        top: 30%; 
+        left: 20%;
+        background-color: #f5961a;
+        color: #fff;
+        border: none;
+        padding: 0px 0px;
+        font-size: 16px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2; /* Garante que o botão esteja acima do texto */
+        font-size: 80px;
+        border-radius: 15px;
+        transition: opacity 3s ease-in-out;
+    }
+    .visible {
+        opacity: 80%;
+    }
+    
+    .hidden {
+        transition: opacity 2s ease-in-out;
+        opacity: 0;
+    }
+    
+    .hidden2 {
+        display: none;
+    }
 }
 
