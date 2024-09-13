@@ -23,10 +23,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function skipToNextSection() {
     const nextSection = document.querySelector('#projetos'); // Substitua pelo ID da próxima seção
-    nextSection.scrollIntoView({ behavior: 'smooth' }); // Rolagem suave para a próxima seção
+    if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' }); // Rolagem suave para a próxima seção
+    } else {
+        console.error('Seção não encontrada');
+    }
 }
 
-$(document).ready(function(){
+document.addEventListener('DOMContentLoaded', function () {
+    // Função para abrir o modal
+    function openModal() {
+        document.getElementById('quote').style.display = 'block';
+    }
+    
+    // Função para fechar o modal
+    function closeModal() {
+        document.getElementById('quote').style.display = 'none';
+    }
+    
+    // Fechar o modal se o usuário clicar fora do modal
+    window.onclick = function(event) {
+        if (event.target === document.getElementById('quote')) {
+            closeModal();
+        }
+    }
+
+    // Adicionar evento de clique ao botão para abrir o modal
+    document.querySelector('.cta').addEventListener('click', openModal);
+    
+    // Adicionar evento de clique ao botão para fechar o modal
+    document.querySelector('.close').addEventListener('click', closeModal);
+    
+    // Inicializar carrosséis Slick
     $('.illustrations-carousel').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -67,74 +95,4 @@ $(document).ready(function(){
         dots: true,
         arrows: true
     });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('contactForm');
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const subjectInput = document.getElementById('subject');
-        const messageInput = document.getElementById('message');
-    
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent form from submitting by default
-            let valid = true;
-    
-            // Validate Name
-            if (nameInput.value.trim() === '') {
-                showError('nameError', 'Please enter your name.');
-                valid = false;
-            } else {
-                hideError('nameError');
-            }
-    
-            // Validate Email
-            if (!isValidEmail(emailInput.value)) {
-                showError('emailError', 'Please enter a valid email.');
-                valid = false;
-            } else {
-                hideError('emailError');
-            }
-    
-            // Validate Subject
-            if (subjectInput.value.trim() === '') {
-                showError('subjectError', 'Please enter a subject.');
-                valid = false;
-            } else {
-                hideError('subjectError');
-            }
-    
-            // Validate Message
-            if (messageInput.value.trim() === '') {
-                showError('messageError', 'Please enter your message.');
-                valid = false;
-            } else {
-                hideError('messageError');
-            }
-    
-            // If all validations pass, proceed with form submission (e.g., AJAX call)
-            if (valid) {
-                alert('Form submitted successfully!');
-                form.reset();
-            }
-        });
-    
-        function showError(elementId, message) {
-            const errorElement = document.getElementById(elementId);
-            errorElement.textContent = message;
-            errorElement.style.display = 'block';
-        }
-    
-        function hideError(elementId) {
-            const errorElement = document.getElementById(elementId);
-            errorElement.textContent = '';
-            errorElement.style.display = 'none';
-        }
-    
-        function isValidEmail(email) {
-            // Basic email validation regex
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
-    });
-    
 });

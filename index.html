@@ -28,8 +28,37 @@
                 <li><a href="#habilidades">Skills</a></li>
                 <li><a href="#contato">Contact</a></li>
             </ul>
-            <a href="#contato" class="cta">Request a Quote</a>
+            <a href="#requestquote" class="cta" onclick="openModal()">Request a Quote</a>
         </nav>
+        <div id="quote" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Request a Quote</h2>
+                <form id="contact-form" action="https://formsubmit.co/b401cc0bcaf53fcec18ca548786cf72c" method="POST">
+                    <div class="modal-name-email">
+                        <label for="name">How would you like to be called:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <label for="service">Type of Work:</label>
+                    <select id="service" name="service" required>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Illustrations">Illustrations</option>
+                        <option value="Data Science">Data Science</option>
+                        <option value="Front-End">Front-End</option>
+                        <option value="Back-End">Back-End</option>
+                        <option value="Database">Database</option>
+                    </select>
+                    <label for="project-idea">Tell us your idea:</label>
+                    <textarea id="project-idea" name="project-idea" rows="4" required></textarea>
+                    <button type="submit">Submit</button>
+                    <input type="hidden" name="_subject" value="Novo Contato!">
+                    <input type="text" name="_honey" style="display:none;">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+            </div>
+        </div>
 
     </header>
 
@@ -82,7 +111,7 @@
             
             Support: We offer ongoing support to ensure customer satisfaction and project success. <br>
         </p>
-        <button class="pular-texto" id="pular-texto" onclick="skipToNextSection()">Skip This S##t</button> 
+        <button class="pular-texto" id="pular-texto" onclick="skipToNextSection()">Skip This S##t</button>
         </div>
     </section>
     <h2 class="projeto-section">Projects</h2>
@@ -171,6 +200,8 @@
     </div>
 
     </section>
+
+
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="/script.js"></script>
