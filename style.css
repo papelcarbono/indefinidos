@@ -161,33 +161,19 @@ nav {
     opacity: 0; /* Inicialmente oculto */
     transition: opacity 3s ease-in-out; /* Animação suave de opacidade */
     position: relative; /* Necessário para o botão de pulo */
-    text-align:justify;
+    text-align:left;
     font-size: 28px;
     margin: 10px 50px;
     color: #efefef;
     cursor:default;
+    hyphens: auto;
+    
 }
 
 .sobre-texto.visible {
     opacity: 1; /* Torna o texto visível quando a classe 'visible' é adicionada */
 }
 
-/* Estilos para o botão de pular */
-.skip-button {
-    display: block;
-    margin: 20px auto; /* Centraliza o botão */
-    padding: 10px 20px;
-    background-color: #40a184;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s;
-}
-
-.skip-button:hover {
-    background-color: #2abd4f;
-}
 
 /* Estilos para a seção projetos */
 .projeto-section {
@@ -235,7 +221,10 @@ nav {
     object-fit: cover; /* Garante que a imagem cubra o container sem distorção */
     display: block; /* Remove espaços em branco ao redor da imagem */
     border-radius: 8px; /* Adiciona bordas arredondadas, se desejado */
+    object-position:50% 5%;
 }
+
+
 
 .slick-prev, .slick-next {
     background-color: #1d1622;
@@ -292,16 +281,102 @@ nav {
     background-color: #ec2424;
 }
 
-/* Media Queries para responsividade */
+.contato-container {
+    background-color: #1d1622;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
-/* Ajusta o tamanho dos títulos e a disposição em telas pequenas */
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #efefef;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #efefef
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: none; 
+}
+
+
+.button-contato {
+    width: 100%;
+    padding: 10px;
+    background-color: #40a184;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #2abd4f;
+}
+
+
+
+
 @media (max-width: 768px) {
+    * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      nav {
+        width: 100%;
+      }
+
     header {
     height: 85px;
     }
 
     video {
-        height: 550px;
+        width: 100%; /* Mantém a largura do vídeo */
+        height: auto; /* Ajusta a altura automaticamente */
+        min-height: 37vh; /* Define a altura mínima para cobrir o conteúdo */
+        object-fit: cover; /* Mantém o vídeo ajustado */
     }
     .container-titulo {
         font-size: 2em;
@@ -352,6 +427,22 @@ nav {
         position: relative; /* Define o contêiner como relativo para posicionar o botão absoluto dentro dele */
         margin: 0px 0px;
         background-color: #4A2B35; /* Ajuste conforme o design */
+    }
+    .cta {
+        margin-left: 3px;
+        padding: 3px 3px;
+        background-color: #40a184;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 3px;
+    }
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 15px;  
+        margin: 0;
+        padding: 3px;
     }
 }
 
