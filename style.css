@@ -141,6 +141,7 @@ nav {
 .sobre h4 {
     text-align: center;
     font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .sobre h4:hover {
@@ -192,6 +193,7 @@ nav {
 .projeto-section {
     text-align: center;
     font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* Estilos gerais para a seção projetos */
@@ -218,6 +220,7 @@ nav {
     font-size: 24px;
     color: #fff;
     flex-wrap: wrap;
+    
 }
 
 /* Estilos para o carrossel */
@@ -293,6 +296,13 @@ nav {
 
 /* Ajusta o tamanho dos títulos e a disposição em telas pequenas */
 @media (max-width: 768px) {
+    header {
+    height: 85px;
+    }
+
+    video {
+        height: 550px;
+    }
     .container-titulo {
         font-size: 2em;
         margin-top: 50px;
@@ -303,76 +313,45 @@ nav {
     .container-titulo h2,
     .container-titulo h3,
     .container-titulo h4 {
-        font-size: 1.5em;
+        font-size: 1.1em;
     }
 
     .container-titulo h1 {
-        top: 5px;
+        top: 35px;
     }
 
     .container-titulo h2:nth-of-type(1) {
-        top: 60px;
+        top: 75px;
     }
 
     .container-titulo h2:nth-of-type(2) {
-        top: 100px;
+        top: 115px;
     }
 
     .container-titulo h3:nth-of-type(1) {
-        top: 140px;
+        top: 155px;
     }
 
     .container-titulo h3:nth-of-type(2) {
-        top: 180px;
+        top: 195px;
+    }
+
+    .container-titulo h3:nth-of-type(3) {
+        top: 235px; 
     }
 
     .container-titulo h4 {
-        top: 220px;
+        top: 270px;
     }
 
     .skip-button {
         font-size: 24px;
         padding: 8px 16px;
     }
-}
-
-/* Ajusta o layout do header e navegação em telas pequenas */
-@media (max-width: 480px) {
-    header {
-        height: auto;
-        padding: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 16px;
-    }
-
-    .container-logo img {
-        height: 2em;
-    }
-
-    .cta {
-        font-size: 16px;
-        padding: 8px 16px;
-    }
-
-    .sobre-texto {
-        font-size: 24px;
-        margin: 10px 20px;
-    }
-    
-    .projetos {
-        padding: 20px;
-    }
-
-    .projeto-coluna h3 {
-        font-size: 20px;
+    .sobre-texto-container {
+        position: relative; /* Define o contêiner como relativo para posicionar o botão absoluto dentro dele */
+        margin: 0px 0px;
+        background-color: #4A2B35; /* Ajuste conforme o design */
     }
 }
+
